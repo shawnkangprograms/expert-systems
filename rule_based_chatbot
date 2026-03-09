@@ -1,0 +1,37 @@
+# Create a simple chatbot
+def chatbot_response(user_input):
+    user_input = user_input.lower()
+    if 'hello' in user_input or 'hi' in user_input:
+        return 'Hello! How can I help you?'
+    elif 'whats up' in user_input or 'how are you' in user_input:
+        return "I'm a chatbot. I don't have feelings but thanks for asking!"
+    elif 'who are you' in user_input or 'whats your name' in user_input:
+        return "I'm a simple rule-based chatbot created in Python."
+    
+    elif "i'm stuck" in user_input or 'help' in user_input:
+        return "You can greet me, ask how I am, ask my name, or say bye."
+    
+    elif 'what do you do' in user_input or 'what can you do' in user_input:
+        return "Right now I can answer simple questions based on keywords."
+    
+    elif "what's the time" in user_input or 'time' in user_input:
+        return "I can't check the real time yet, but you can add a time feature using Python's datetime module."
+    
+    elif 'thanks' in user_input or 'thank you' in user_input:
+        return "You're welcome! Happy to help."
+        
+    elif 'bye' in user_input or 'goodbye' in user_input:
+        return "Goodbye! Have a great day!"
+    else:
+        return "I'm sorry, I can't quite understand that. Could you please rephrase?"
+
+print("Chatbot: Hello! Type 'bye' to exit") 
+
+# Example usage
+while True:
+    user_input = input("You: ")
+    response = chatbot_response(user_input)
+    print("Chatbot: " + response)
+    
+    if "bye" in user_input.lower():
+        break
