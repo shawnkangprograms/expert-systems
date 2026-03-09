@@ -1,0 +1,34 @@
+# Forward chaining expert system
+
+# Known facts
+facts = {"passed_exams", "completed_project"}
+
+# Rules: (Conditions -> Conclusions)
+rules = [
+    ({"passed_exams"}, "eligible_for_graduation"),
+    ({"completed_project"}, "eligible_for_graduation"),
+    ({"eligible_for_graduation"}, "graduate")
+    ]
+    
+print("Initial facts:", facts)
+print()
+
+new_fact_added = True
+
+while new_fact_added:
+    new_fact_added = False
+    
+    for conditions, conclusion in rules:
+        if conditions.issubset(facts) and conclusion not in facts:
+            print:("Rules fired: ", conditions, "->", conclusion)
+            facts.add(conclusion)
+            new_fact_added = True
+            
+print("\nFinal facts: ", facts)
+
+if "graduate" in facts:
+    print("The student can graduate")
+else:
+    print("The student cannot graduate")
+    
+            
